@@ -25,7 +25,7 @@ firebase.initializeApp({
 });
 
 const App = () => {
-  const { setLogIn } = useContext(GlobalContext);
+  const { setLogIn, setUserEmail } = useContext(GlobalContext);
 
   // check if user is logged in firebase and set state accordingly
   const checkIfLoggedIn = () => {
@@ -33,6 +33,7 @@ const App = () => {
      firebase.auth().onAuthStateChanged(function (user) {
        if (user) {
          setLogIn(true);
+         setUserEmail(user.email)
        } else {
          setLogIn(false);
        }
