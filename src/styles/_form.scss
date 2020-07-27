@@ -1,0 +1,92 @@
+.form-container {
+  background: $color-white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: $box-shadow-light;
+  min-width: 19rem;
+}
+
+.form {
+  &__heading {
+    margin: .5rem 0 2.5rem;
+    text-align: center;
+  }
+  
+  &__form-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+
+  &__form-label {
+    font-size: 0.9rem;
+    color: lighten($color-grey, 10%);
+    font-weight: 700;
+    margin-bottom: 0.1rem;
+  }
+
+  &__form-control {
+    padding: .4rem  .5rem;
+    border: 1px solid $color-background-light;
+    background: $color-background-light;
+    color: $color-grey;
+    border-radius: 4px;
+    outline: none;
+
+    &:focus {
+      box-shadow: $box-shadow-focus;
+      border-color: $color-background;
+    }
+
+    &::placeholder {
+      color: $color-lightgrey;
+    }
+
+    &--error {
+      border-color: $color-error;
+      transition: .1s;
+    }
+  }
+
+  &__btn {
+    margin-top: 1rem;
+  }
+
+  &__error-msg {
+    position: absolute;
+    bottom: -.9rem;
+    font-size: 0.7rem;
+    color: $color-error;
+    right: 0;
+    animation: fadeIn .1s;
+  }
+
+  &__submit-err {
+    font-size: 0.8rem;
+    font-weight: 7;
+    text-align: center;
+    color: $color-error;
+    width: 100%;
+    position: absolute;
+    bottom: -80%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+}
+
+.form-redirect {
+  margin-top: 3rem;
+
+  &__heading {
+    font-size: 1rem;
+    text-align: right;
+  }
+
+  &__link {
+    display: block;
+    text-align: right;
+    font-size: .9rem;
+  }
+}

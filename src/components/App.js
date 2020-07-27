@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { GlobalContext } from '../context';
+
 import HomePage from '../pages/HomePage';
 import Dashboard from '../pages/Dashboard';
 import Login from '../pages/Login';
@@ -23,6 +25,22 @@ firebase.initializeApp({
 });
 
 const App = () => {
+  const { setLogIn } = useContext(GlobalContext);
+
+  // check if user is logged in firebase and set state accordingly
+  const checkIfLoggedIn = () => {
+     console.log('rendered');
+     firebase.auth().onAuthStateChanged(function (user) {
+       if (user) {
+         setLogIn(true);
+       } else {
+         setLogIn(false);
+       }
+     });
+  }
+
+  useEffect(checkIfLoggedIn, []);
+
   return (
     <>
       <Switch>

@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Redirect } from 'react-router-dom';
+import { GlobalContext } from '../context';
 
 const HomePage = () => {
+  const { isLoggedIn } = useContext(GlobalContext);
+
   return (
-    <div>
-      HomePage
-    </div>
+    <>
+      {isLoggedIn ? <Redirect to="/dashboard" /> : <Redirect to="/login" />}
+    </>
   );
 }
 

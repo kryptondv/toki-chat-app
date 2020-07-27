@@ -1,0 +1,19 @@
+.btn {
+  padding: .45rem .5rem;
+  border: 1px solid $color-primary;
+  background: $color-primary;
+  color: $color-white;
+  border-radius: 4px;
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: $transition-main;
+  cursor: pointer;
+
+  &:hover,
+  &:focus
+  {
+    color: $color-primary;
+    background: $color-white;
+  }
+}
