@@ -3,7 +3,9 @@ import firebase from 'firebase/app';
 import { Redirect } from 'react-router-dom';
 import { GlobalContext } from '../context';
 
+
 import Form from '../components/Form';
+import Logo from '../components/Logo';
 
 const LoginPage = () => {
   const { isLoggedIn, setLogIn } = useContext(GlobalContext);
@@ -23,6 +25,7 @@ const LoginPage = () => {
 
   return (
     <>
+      <Logo />
       <Form submitFormData={submitFormData} submitErr={submitErr} />
       {isLoggedIn && <Redirect to="/dashboard" />}
     </>

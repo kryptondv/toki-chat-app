@@ -2,9 +2,10 @@ import React, { useContext, useEffect } from 'react';
 import firebase from 'firebase/app';
 import { Redirect } from 'react-router-dom';
 import { GlobalContext } from '../context';
+import Sidebar from '../components/dashboard/Sidebar';
 
 const Dashboard = () => {
-  const { isLoggedIn, userEmail, setChats, chats } = useContext(GlobalContext);
+  const { isLoggedIn, userEmail, setChats } = useContext(GlobalContext);
 
   const onDashboardMount = () => {
     console.log('rendered');
@@ -14,13 +15,11 @@ const Dashboard = () => {
         .collection('chats')
         .where('users', 'array-contains', userEmail)
         .onSnapshot(res => {
-          const chats = res.docs.map(doc => doc.data());
-          setChats(chats);
+          const userChats = res.docs.map(doc => doc.data());
+          setChats(userChats);
         });
     };
-    if (userEmail) {
       subscribe();
-    }
     // clear subscribe on unmount
     return () => {
       subscribe();
@@ -32,7 +31,9 @@ const Dashboard = () => {
 
 
   return (
-    <div>
+    <div className="dashboard">
+      {/* left side */}
+      <Sidebar />
       Dashboard
       {!isLoggedIn && <Redirect to="/login" />}
     </div>

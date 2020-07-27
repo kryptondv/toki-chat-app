@@ -1,0 +1,18 @@
+.logo {
+  display: block;
+  margin: 0 auto 1.5rem;
+  height: 80px;
+  animation: rotateLogo 1s ease-out;
+}
+
+@keyframes rotateLogo {
+  0% {
+    opacity: 0;
+    transform: rotate(20deg) scale(1.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: initial;
+  }
+}

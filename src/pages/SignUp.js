@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { GlobalContext } from '../context';
 
 import Form from '../components/Form';
+import Logo from '../components/Logo';
 
 const SignUp = () => {
   const { isLoggedIn, setLogIn } = useContext(GlobalContext);
@@ -31,7 +32,6 @@ const SignUp = () => {
           });
       })
       .catch(error => {
-        // const errorCode = error.code;
         const errorMessage = error.message;
         setSubmitErr(errorMessage);
       });
@@ -39,6 +39,7 @@ const SignUp = () => {
 
   return (
     <>
+      <Logo />
       <Form
         type="signup"
         submitFormData={submitFormData}
