@@ -5,6 +5,9 @@ const initialState = {
   isLoggedIn: false,
   userEmail: '',
   chats: [],
+  selectedChat: null,
+  showSidebar: true,
+  newChatWindow: false,
 };
 
 export const GlobalContext = createContext();
@@ -33,9 +36,38 @@ export const GlobalProvider = ({ children }) => {
     });
   };
 
+  const selectChat = index => {
+    dispatch({
+      type: 'SELECT_CHAT',
+      payload: index,
+    });
+  };
+
+  const setNewChatWindow = value => {
+    dispatch({
+      type: 'SET_NEW_CHAT',
+      payload: value,
+    });
+  };
+
+  const setSidebar = value => {
+    dispatch({
+      type: 'SET_SIDEBAR',
+      payload: value,
+    });
+  };
+
   return (
     <GlobalContext.Provider
-      value={{ ...state, setLogIn, setUserEmail, setChats }}
+      value={{
+        ...state,
+        setLogIn,
+        setUserEmail,
+        setChats,
+        selectChat,
+        setNewChatWindow,
+        setSidebar,
+      }}
     >
       {children}
     </GlobalContext.Provider>

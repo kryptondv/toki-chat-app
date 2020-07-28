@@ -4,7 +4,7 @@ import { GlobalContext } from '../../context';
 import Avatar from './Avatar';
 
 const ChatListItem = ({ chat, index }) => {
-  const { userEmail } = useContext(GlobalContext);
+  const { userEmail, selectChat, setNewChatWindow, setSidebar } = useContext(GlobalContext);
   const selectedChat = false;
 
   const friendEmail = chat.users.filter(user => user !== userEmail)[0];
@@ -14,12 +14,19 @@ const ChatListItem = ({ chat, index }) => {
       : '';
   const lastMessagePrev =
     lastMessage.length > 20
-      ? lastMessage.substring(0, 20) + ' ...'
+      ? lastMessage.substring(0, 40) + ' ...'
       : lastMessage;
+
+  const onChatListItemClick = index => {
+    setNewChatWindow(false);
+    selectChat(index);
+    setSidebar(false);
+  };
+
 
   return (
     <div
-      // onClick={() => onChatListItemClick(index)}
+      onClick={() => onChatListItemClick(index)}
       className={`chat-list-item ${
         selectedChat === index ? 'chat-list-item--selected' : ''
       }`}

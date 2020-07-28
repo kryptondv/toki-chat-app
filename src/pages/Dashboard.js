@@ -2,10 +2,15 @@ import React, { useContext, useEffect } from 'react';
 import firebase from 'firebase/app';
 import { Redirect } from 'react-router-dom';
 import { GlobalContext } from '../context';
+
 import Sidebar from '../components/dashboard/Sidebar';
+import Chat from '../components/dashboard/Chat';
+import NewChat from '../components/dashboard/NewChat';
 
 const Dashboard = () => {
-  const { isLoggedIn, userEmail, setChats } = useContext(GlobalContext);
+  const { isLoggedIn, userEmail, setChats, newChatWindow } = useContext(
+    GlobalContext
+  );
 
   const onDashboardMount = () => {
     console.log('rendered');
@@ -19,25 +24,28 @@ const Dashboard = () => {
           setChats(userChats);
         });
     };
-      subscribe();
+    subscribe();
     // clear subscribe on unmount
     return () => {
       subscribe();
     };
-   
-  }
+  };
 
   useEffect(onDashboardMount, [userEmail]);
-
 
   return (
     <div className="dashboard">
       {/* left side */}
       <Sidebar />
-      Dashboard
+
+      {/* right side */}
+      <main className="dashboard__main">
+        {newChatWindow ? <NewChat /> : <Chat />}
+      </main>
+
       {!isLoggedIn && <Redirect to="/login" />}
     </div>
   );
-}
+};
 
 export default Dashboard;

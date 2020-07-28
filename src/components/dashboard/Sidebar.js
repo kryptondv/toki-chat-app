@@ -7,18 +7,30 @@ import Logo from '../Logo';
 import ChatList from './ChatList';
 
 const Sidebar = () => {
-  const { userEmail } = useContext(GlobalContext);
+  const { userEmail, showSidebar, setSidebar, setNewChatWindow, selectChat } = useContext(GlobalContext);
 
   const signOut = () => {
     firebase.auth().signOut();
   };
 
+  const onNewChatBtnClick = () => {
+    setNewChatWindow(true);
+    selectChat(null);
+    setSidebar(false);
+  };
+
   return (
-    <section className="sidebar">
+    <section className={`sidebar ${!showSidebar && 'sidebar--hidden'}`}>
       <h1 className="sidebar__heading">{userEmail}</h1>
+      <button
+        onClick={() => setSidebar(!showSidebar)}
+        className="sidebar__toggle"
+      >
+        {'<'}
+      </button>
       <ChatList />
       <div className="sidebar__buttons">
-        <Button>New Chat</Button>
+        <Button func={onNewChatBtnClick}>New Chat</Button>
         <Button func={signOut}>Sign out</Button>
       </div>
     </section>

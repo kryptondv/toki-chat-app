@@ -10,6 +10,14 @@ export default (state, action) => {
     case 'SET_CHATS':
       return {...state, chats: action.payload}
 
+    case 'SELECT_CHAT':
+      return {...state, selectedChat: action.payload}
+
+    case 'SET_NEW_CHAT':
+      return {...state, newChatWindow: action.payload}
+
+    case 'SET_SIDEBAR':
+      return {...state, showSidebar: action.payload}
 
     default:
       return state;
