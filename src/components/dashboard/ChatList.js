@@ -6,15 +6,14 @@ const ChatList = () => {
   const { chats } = useContext(GlobalContext);
 
   return (
-    <div>
+    <ul className="chat-list">
       {chats.length > 0 &&
         chats.map((chat, index) => (
           <li key={index}>
             <ChatListItem chat={chat} index={index} />
-            <p>chat</p>
           </li>
         ))}
-    </div>
+    </ul>
   );
 };
 

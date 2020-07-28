@@ -5,7 +5,7 @@ import Avatar from './Avatar';
 
 const ChatListItem = ({ chat, index }) => {
   const { userEmail } = useContext(GlobalContext);
-  const selectedChat = true;
+  const selectedChat = false;
 
   const friendEmail = chat.users.filter(user => user !== userEmail)[0];
   const lastMessage =
@@ -20,11 +20,17 @@ const ChatListItem = ({ chat, index }) => {
   return (
     <div
       // onClick={() => onChatListItemClick(index)}
-      className={`list-item ${selectedChat === index ? 'selected' : ''}`}
+      className={`chat-list-item ${
+        selectedChat === index ? 'chat-list-item--selected' : ''
+      }`}
     >
-      <Avatar user={friendEmail} />
-      <span>{friendEmail}</span>
-      <p>{lastMessagePrev}</p>
+      <div className="chat-list-item__avatar">
+        <Avatar user={friendEmail} />
+      </div>
+      <div className="chat-list-item__right">
+        <span className="chat-list-item__contact">{friendEmail}</span>
+        <p className="chat-list-item__msg-prev">{lastMessagePrev}</p>
+      </div>
     </div>
   );
 };

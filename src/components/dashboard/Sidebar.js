@@ -14,12 +14,14 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="sidebar">
-      <Logo />
+    <section className="sidebar">
       <h1 className="sidebar__heading">{userEmail}</h1>
       <ChatList />
-      <Button func={signOut}>Sign out</Button>
-    </div>
+      <div className="sidebar__buttons">
+        <Button>New Chat</Button>
+        <Button func={signOut}>Sign out</Button>
+      </div>
+    </section>
   );
 };
 
