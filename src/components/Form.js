@@ -153,13 +153,14 @@ const SignUpForm = ({ type, submitFormData, submitErr }) => {
           {submitErr && <span className="form__submit-err">{submitErr}</span>}
         </div>
       </form>
-      <div className="form-redirect"></div>
-      <h2 className="form-redirect__heading">
-        {signup ? 'Already have an account?' : "Don't have an account?"}
-      </h2>
-      <Link to={signup ? 'login' : 'signup'} className="form-redirect__link">
-        {signup ? 'Log In' : 'Sign Up'}
-      </Link>
+      <div className="form-redirect">
+        <h2 className="form-redirect__heading">
+          {signup ? 'Already have an account?' : "Don't have an account?"}
+        </h2>
+        <Link to={signup ? 'login' : 'signup'} className="form-redirect__link">
+          {signup ? 'Log In' : 'Sign Up'}
+        </Link>
+      </div>
     </div>
   );
 };
