@@ -57,7 +57,7 @@ const Chat = () => {
           <ChatInput />
         </section>
       ) : (
-        <section>no chat selected</section>
+        <section className="no-chat">no chat selected</section>
       )}
     </>
   );
