@@ -27,26 +27,6 @@ const ChatInput = () => {
       });
   };
 
-  // send read confirmation
-  const updateMessageRead = () => {
-    const selectedChatMessages = chats[selectedChat].messages;
-    const lastSender =
-      selectedChatMessages.length > 0
-        ? selectedChatMessages[selectedChatMessages.length - 1].sender
-        : '';
-    // DRY - fix that!!!
-    const friend = chats[selectedChat].users.filter(
-      user => user !== userEmail
-    )[0];
-    const documentKey = [userEmail, friend].sort().join(':');
-    if (lastSender !== userEmail) {
-      firebase
-        .firestore()
-        .collection('chats')
-        .doc(documentKey)
-        .update({ receiverHasRead: true });
-    }
-  };
 
   const onFormSubmit = e => {
     e.preventDefault();
@@ -56,9 +36,6 @@ const ChatInput = () => {
     setMessage('');
   };
 
-  const onInputFocus = () => {
-    updateMessageRead();
-  };
 
   return (
     <form onSubmit={onFormSubmit} className="chat-input">
@@ -66,7 +43,6 @@ const ChatInput = () => {
         className="chat-input__msg"
         value={message}
         onChange={e => setMessage(e.target.value)}
-        onFocus={onInputFocus}
         type="text"
         placeholder="your message"
       />
