@@ -26,7 +26,6 @@ const Chat = () => {
     if(chatMain.current) {
       chatMain.current.scrollTo(0, chatMain.current.scrollHeight);
     }
-    console.log('rendered');
   }, [selectedChat, chat]);
 
   return (
