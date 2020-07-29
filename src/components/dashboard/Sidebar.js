@@ -36,13 +36,13 @@ const Sidebar = () => {
       </div>
       <ChatList />
       <div className="sidebar__buttons">
-        <Button func={onNewChatBtnClick} icon="fas fa-user-plus">
+        <Button func={onNewChatBtnClick} icon="fas fa-user-plus" addClass="sidebar__btn">
           Add Friend
         </Button>
         <Button
           func={signOut}
           icon="fas fa-sign-out-alt"
-          addClass="btn--secondary"
+          addClass="btn--secondary sidebar__btn"
         >
           Sign out
         </Button>

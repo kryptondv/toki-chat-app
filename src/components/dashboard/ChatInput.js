@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useRef } from 'react';
 import { GlobalContext } from '../../context';
 import firebase from 'firebase/app';
 
@@ -6,6 +6,8 @@ const ChatInput = () => {
   const [message, setMessage] = useState('');
   // const { submitMessage, updateMessageRead } = useContext(GlobalContext);
   const { chats, selectedChat, userEmail } = useContext(GlobalContext);
+
+  const msgInput = useRef();
 
   // add message to database
   const submitMessage = message => {
@@ -34,6 +36,7 @@ const ChatInput = () => {
       submitMessage(message);
     }
     setMessage('');
+    msgInput.current.focus()
   };
 
 
@@ -45,6 +48,7 @@ const ChatInput = () => {
         onChange={e => setMessage(e.target.value)}
         type="text"
         placeholder="your message"
+        ref={msgInput}
       />
       <button className="chat-input__btn">
         <i className="fas fa-paper-plane"></i>
