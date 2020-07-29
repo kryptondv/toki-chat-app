@@ -58,8 +58,10 @@
   }
 }
 
-@media screen and (min-width: 768px), (orientation: landscape) {
+@media screen and (min-width: 768px) {
   .toggler {
     display: none;
   }
+
+
 }
