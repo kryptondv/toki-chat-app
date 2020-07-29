@@ -29,7 +29,6 @@ const App = () => {
 
   // check if user is logged in firebase and set state accordingly
   const checkIfLoggedIn = () => {
-     console.log('rendered');
      firebase.auth().onAuthStateChanged(function (user) {
        if (user) {
          setLogIn(true);

@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  -webkit-tap-highlight-color: transparent; 
+  -webkit-tap-highlight-color: transparent;
   z-index: 2;
 
   &:focus {
@@ -32,34 +32,29 @@
 
     &--top {
       top: 50%;
-      transform: translateY(-170%) rotate(-45deg);
+      transform: translateY(-170%) rotate(45deg);
     }
 
     &--bottom {
       bottom: 50%;
-      transform: translateY(170%) rotate(45deg);
+      transform: translateY(170%) rotate(-45deg);
     }
   }
 
   &--clicked {
     .toggler__bar {
       border-color: $color-white;
-      
+
       &--top {
-        top: 50%;
-        transform: translateY(-170%) rotate(45deg);
-        // width: 1rem;
+        transform: translateY(-170%) rotate(-45deg);
       }
 
       &--bottom {
-        bottom: 50%;
-        transform: translateY(170%) rotate(-45deg);
-        // width: 1rem;
+        transform: translateY(170%) rotate(45deg);
       }
     }
   }
 }
-
 
 @media screen and (min-width: 768px), (orientation: landscape) {
   .toggler {

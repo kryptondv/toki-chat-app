@@ -4,8 +4,7 @@ import { GlobalContext } from '../../context';
 import Avatar from './Avatar';
 
 const ChatListItem = ({ chat, index }) => {
-  const { userEmail, selectChat, setNewChatWindow, setSidebar } = useContext(GlobalContext);
-  const selectedChat = false;
+  const { userEmail, selectChat, selectedChat, setNewChatWindow, setSidebar } = useContext(GlobalContext);
 
   const friendEmail = chat.users.filter(user => user !== userEmail)[0];
   const lastMessage =

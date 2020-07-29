@@ -3,7 +3,6 @@ import { GlobalContext } from '../../context';
 import firebase from 'firebase/app';
 
 import Button from './Button';
-import Logo from '../Logo';
 import ChatList from './ChatList';
 import SidebarToggler from './SidebarToggler';
 

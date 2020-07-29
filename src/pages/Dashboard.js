@@ -13,7 +13,6 @@ const Dashboard = () => {
   );
 
   const onDashboardMount = () => {
-    console.log('rendered');
     const subscribe = () => {
       firebase
         .firestore()
