@@ -1,19 +1,22 @@
 .message {
-  background: rgb(128, 128, 128);
-  color: $color-white;
+  background: rgb(201, 204, 218);
+  // color: $color-white;
   padding: .7rem;
   width: 70%;
   max-width: 17rem;
   margin: .6rem 0;
-  border-radius: 20px;
+  border-radius: 14px 14px 14px 0;
   font-size: .9rem;
   box-shadow: $box-shadow-light;
   animation: newMessage .2s ease-out;
 
 
   &--user {
-    background: $color-primary;
+    // background: $color-primary;
+    color: black;
+    background: rgb(255, 255, 255);
     margin-left: auto;
+    border-radius: 14px 14px 0;
   }
 }
 
