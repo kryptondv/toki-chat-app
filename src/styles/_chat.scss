@@ -6,20 +6,21 @@
   &__heading {
     position: absolute;
     text-align: right;
-    width: 10rem;
-    top: 0.4rem;
-    right: 2.5rem;
+    width: 110%;
+    top: 0;
+    right: 0;
     padding: 0.5rem;
+    padding-right: 2rem;
     font-size: 1rem;
     z-index: 2;
     background: $color-white;
-    border-radius: 20px;
+    box-shadow: $box-shadow-light;
+    opacity: .96;
   }
 
   &__main {
     height: calc(100% - 3rem);
     overflow: auto;
-    padding-top: 0.5rem;
     padding-right: 1rem;
   }
 
