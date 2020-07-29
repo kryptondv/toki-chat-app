@@ -12,6 +12,10 @@
     color: $color-grey;
   }
 
+  &__group {
+    width: 80%;
+    max-width: 22rem;
+  }
   &__input {
     width: 80%;
     height: 2.5rem;

@@ -11,7 +11,6 @@ const Chat = () => {
   const chat = chats[selectedChat];
 
   const chatMain = useRef();
-  // console.log(chatMain.current)
 
   useEffect(() => {
     if (chat && chat.messages.length > 0) {
@@ -21,23 +20,23 @@ const Chat = () => {
       setMessageRead(chat.receiverHasRead && lastSender === userEmail);
     }
   }, [chat, userEmail]);
-
+  
+  // scroll to latest message
   useEffect(() => {
     if(chatMain.current) {
-      chatMain.current.scrollTo(0, chatMain.current.clientHeight);
-      console.dir(chatMain.current.clientHeight);
+      chatMain.current.scrollTo(0, chatMain.current.scrollHeight);
     }
-  }, [selectedChat]);
+    console.log('rendered');
+  }, [selectedChat, chat]);
 
-  // add scroll to latest message
   return (
     <>
       {chat ? (
-        <section className="chat" ref={chatMain}>
+        <section className="chat">
           <h2 className="chat__heading">
             {chat.users.filter(usr => usr !== userEmail)[0]}
           </h2>
-          <div className="chat__main">
+          <div className="chat__main" ref={chatMain}>
             {chat.messages.map((message, index) => (
               <ChatMessage key={index} message={message} />
             ))}
