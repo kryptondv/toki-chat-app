@@ -6,15 +6,16 @@
   &__heading {
     position: absolute;
     text-align: right;
-    width: 110%;
+    width: 100%;
     top: 0;
     right: 0;
     padding: 0.5rem;
     padding-right: 2rem;
     font-size: 1rem;
     z-index: 2;
-    background: $color-white;
-    opacity: .96;
+    background: $color-background-light;
+    border-bottom: 1px solid darken($color-background-light, 5%);
+    color: $color-grey;
   }
 
   &__main {
