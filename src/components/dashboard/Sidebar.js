@@ -17,6 +17,9 @@ const Sidebar = () => {
 
   const signOut = () => {
     firebase.auth().signOut();
+    setNewChatWindow(false);
+    selectChat(null);
+    setSidebar(true);
   };
 
   const onNewChatBtnClick = () => {
@@ -36,7 +39,11 @@ const Sidebar = () => {
         <Button func={onNewChatBtnClick} icon="fas fa-user-plus">
           Add Friend
         </Button>
-        <Button func={signOut} icon="fas fa-sign-out-alt">
+        <Button
+          func={signOut}
+          icon="fas fa-sign-out-alt"
+          addClass="btn--secondary"
+        >
           Sign out
         </Button>
       </div>

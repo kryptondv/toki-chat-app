@@ -3,8 +3,9 @@
   height: 4.5rem;
   border-radius: 150px 0 0 150px;
   cursor: pointer;
-  border: none;
-  background: $color-secondary;
+  border: 1px solid $color-primary;
+  border-right: none;
+  background: $color-white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,8 +27,8 @@
     position: absolute;
     width: 1rem;
     height: .2rem;
-    background: $color-white;
-    border: 2px solid $color-white;
+    background: $color-primary;
+    border: 2px solid $color-primary;
     right: 0;
     transition: 0.7s cubic-bezier(0.8, 1.61, 0.25, 1);
     border-radius: 2px;
@@ -45,7 +46,6 @@
 
   &--clicked {
     .toggler__bar {
-      border-color: $color-white;
 
       &--top {
         transform: translate(-10%, -170%) rotate(-45deg);

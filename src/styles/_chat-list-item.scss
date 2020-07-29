@@ -15,11 +15,12 @@
   
   &__contact {
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    color: darken($color-grey, 10%);
   }
   &__msg-prev {
     width: 100%;
-    color: lighten($color-grey, 10%);
+    color: lighten($color-grey, 20%);
     font-size: 0.8rem;
   }
   

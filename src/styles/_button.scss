@@ -25,10 +25,14 @@
   }
   &--secondary {
     background: $color-secondary;
+    border-color: $color-secondary;
+    // color: $color-primary;
 
     &:hover,
     &:focus {
+      background: $color-white;
       color: $color-secondary;
+      
     }
   }
 }

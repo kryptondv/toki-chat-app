@@ -1,6 +1,6 @@
 .message {
-  background: #2a81eb;
-  color: $color-white;
+  background: rgb(255, 255, 255);
+  color: black;
   padding: .7rem;
   width: 70%;
   max-width: 17rem;
@@ -13,8 +13,9 @@
 
   &--user {
     // background: $color-primary;
-    color: black;
-    background: rgb(255, 255, 255);
+    
+    background: #2a81eb;
+  color: $color-white;
     margin-left: auto;
     border-radius: 14px 14px 0;
   }
