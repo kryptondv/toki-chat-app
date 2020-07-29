@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useRef } from 'react';
 import { GlobalContext } from '../../context';
 
 import ChatInput from './ChatInput';
@@ -10,6 +10,9 @@ const Chat = () => {
   const { userEmail, chats, selectedChat } = useContext(GlobalContext);
   const chat = chats[selectedChat];
 
+  const chatMain = useRef();
+  // console.log(chatMain.current)
+
   useEffect(() => {
     if (chat && chat.messages.length > 0) {
       const selectedChatMessages = chat.messages;
@@ -19,33 +22,44 @@ const Chat = () => {
     }
   }, [chat, userEmail]);
 
+  useEffect(() => {
+    if(chatMain.current) {
+      chatMain.current.scrollTo(0, chatMain.current.clientHeight);
+      console.dir(chatMain.current.clientHeight);
+    }
+  }, [selectedChat]);
+
   // add scroll to latest message
   return (
-    <section className="chat">
+    <>
       {chat ? (
-        <div>
-          <h2 className="chat__heading">{chat.users.filter(usr => usr !== userEmail)[0]}</h2>
-          {chat.messages.map((message, index) => (
-            <ChatMessage key={index} message={message} />
-          ))}
-          {messageRead && (
-            <span
-              style={{
-                fontSize: '0.6rem',
-                color: 'grey',
-                display: 'block',
-                textAlign: 'right',
-              }}
-            >
-              Message read
-            </span>
-          )}
+        <section className="chat" ref={chatMain}>
+          <h2 className="chat__heading">
+            {chat.users.filter(usr => usr !== userEmail)[0]}
+          </h2>
+          <div className="chat__main">
+            {chat.messages.map((message, index) => (
+              <ChatMessage key={index} message={message} />
+            ))}
+            {messageRead && (
+              <span
+                style={{
+                  fontSize: '0.6rem',
+                  color: 'grey',
+                  display: 'block',
+                  textAlign: 'right',
+                }}
+              >
+                Message read
+              </span>
+            )}
+          </div>
           <ChatInput />
-        </div>
+        </section>
       ) : (
-        <div>no chat selected</div>
+        <section>no chat selected</section>
       )}
-    </section>
+    </>
   );
 };
 

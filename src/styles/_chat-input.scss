@@ -1,0 +1,25 @@
+.chat-input {
+  position: fixed;
+  bottom: 0;
+  left: 15%;
+  // right: 0;
+  width: 90%;
+
+  &__msg {
+    width: 70%;
+    height: 3rem;
+    padding: 0 1rem;
+    text-align: right;
+    border: none;
+    border-radius: 20px 0 0 20px;
+  }
+
+  &__btn {
+    width: 20%;
+    height: 3rem;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    background: $color-primary;
+    color: $color-white;
+  }
+}

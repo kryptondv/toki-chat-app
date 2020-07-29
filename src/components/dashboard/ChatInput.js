@@ -61,15 +61,18 @@ const ChatInput = () => {
   };
 
   return (
-    <form onSubmit={onFormSubmit}>
+    <form onSubmit={onFormSubmit} className="chat-input">
       <input
+        className="chat-input__msg"
         value={message}
         onChange={e => setMessage(e.target.value)}
         onFocus={onInputFocus}
         type="text"
         placeholder="your message"
       />
-      <input type="submit" value="send" />
+      <button className="chat-input__btn" type="submit">
+        <i className="fas fa-paper-plane"></i>
+      </button>
     </form>
   );
 };

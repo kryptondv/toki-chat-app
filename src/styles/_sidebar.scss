@@ -9,6 +9,7 @@
   flex-direction: column;
   justify-content: space-between;
   transition: transform .4s ease-out;
+  z-index: 3;
   
 
   &__heading {
@@ -20,11 +21,10 @@
     font-size: 1.5rem;
   }
 
-  &__toggle {
+  &__toggler {
     position: absolute;
-    right: 0;
-    top: 2.2rem;
-    padding: 1rem;
+    right: .2rem;
+    top: 1.8rem;
   }
 
   &__buttons {

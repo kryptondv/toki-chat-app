@@ -5,7 +5,7 @@ const ChatMessage = ({ message }) => {
   const { userEmail } = useContext(GlobalContext);
 
   return (
-    <div className={message.sender === userEmail ? 'user' : 'friend'}>
+    <div className={`message message--${message.sender === userEmail ? 'user' : 'friend'}`}>
       {message.message}
     </div>
   );

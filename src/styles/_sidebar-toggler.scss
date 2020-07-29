@@ -1,0 +1,68 @@
+.toggler {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-tap-highlight-color: transparent; 
+  z-index: 2;
+
+  &:focus {
+    outline: none;
+  }
+
+  &__bars {
+    width: 1.5rem;
+    height: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__bar {
+    position: absolute;
+    width: 1rem;
+    border: 2px solid $color-white;
+    right: 0;
+    transition: 0.7s cubic-bezier(0.8, 1.61, 0.25, 1);
+    border-radius: 2px;
+
+    &--top {
+      top: 50%;
+      transform: translateY(-170%) rotate(-45deg);
+    }
+
+    &--bottom {
+      bottom: 50%;
+      transform: translateY(170%) rotate(45deg);
+    }
+  }
+
+  &--clicked {
+    .toggler__bar {
+      border-color: $color-white;
+      
+      &--top {
+        top: 50%;
+        transform: translateY(-170%) rotate(45deg);
+        // width: 1rem;
+      }
+
+      &--bottom {
+        bottom: 50%;
+        transform: translateY(170%) rotate(-45deg);
+        // width: 1rem;
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: 768px), (orientation: landscape) {
+  .toggler {
+    display: none;
+  }
+}

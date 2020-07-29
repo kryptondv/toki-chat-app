@@ -1,0 +1,13 @@
+.message {
+  background: $color-primary;
+  color: $color-white;
+  padding: 1rem;
+  width: 70%;
+  margin: .5rem 0;
+  border-radius: 20px;
+
+  &--user {
+    background: $color-secondary;
+    margin-left: auto;
+  }
+}
