@@ -9,6 +9,9 @@
   letter-spacing: 1px;
   transition: $transition-main;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  position: relative;
 
   &:hover,
   &:focus {
@@ -16,6 +19,10 @@
     background: $color-white;
   }
 
+  &__icon {
+    position: absolute;
+    left: 2.5rem;
+  }
   &--secondary {
     background: $color-secondary;
 

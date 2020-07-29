@@ -7,7 +7,13 @@ import ChatList from './ChatList';
 import SidebarToggler from './SidebarToggler';
 
 const Sidebar = () => {
-  const { userEmail, showSidebar, setSidebar, setNewChatWindow, selectChat } = useContext(GlobalContext);
+  const {
+    userEmail,
+    showSidebar,
+    setSidebar,
+    setNewChatWindow,
+    selectChat,
+  } = useContext(GlobalContext);
 
   const signOut = () => {
     firebase.auth().signOut();
@@ -27,8 +33,12 @@ const Sidebar = () => {
       </div>
       <ChatList />
       <div className="sidebar__buttons">
-        <Button func={onNewChatBtnClick}>New Chat</Button>
-        <Button func={signOut}>Sign out</Button>
+        <Button func={onNewChatBtnClick} icon="fas fa-user-plus">
+          Add Friend
+        </Button>
+        <Button func={signOut} icon="fas fa-sign-out-alt">
+          Sign out
+        </Button>
       </div>
     </section>
   );

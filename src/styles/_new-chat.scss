@@ -1,0 +1,41 @@
+.new-chat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+
+  &__heading {
+    font-weight: 400;
+    font-size: 1.3rem;
+    margin-bottom: 0.6rem;
+    color: $color-grey;
+  }
+
+  &__input {
+    width: 80%;
+    height: 2.5rem;
+    padding: 0 1rem;
+    text-align: right;
+    border: none;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+    border: 1px solid $color-white;
+
+    &:focus {
+      box-shadow: $box-shadow-light;
+      border-color: $color-background;
+    }
+  }
+
+  &__btn {
+    width: 20%;
+    height: 2.5rem;
+    border: none;
+    border-radius: 0 20px 20px 0;
+    background: $color-primary;
+    color: $color-white;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+}

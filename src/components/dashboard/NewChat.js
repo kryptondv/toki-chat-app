@@ -46,17 +46,21 @@ const NewChat = () => {
 
 
   return (
-    <form onSubmit={onFormSubmit}>
-      <h2>Add new chat</h2>
-      <label htmlFor="new-chat-email"></label>
+    <form className="new-chat" onSubmit={onFormSubmit}>
+      <h2 className="new-chat__heading">Add Your friend's email</h2>
+      <div className="new-chat__group">
       <input
+        className="new-chat__input"
         value={email}
         onChange={e => setEmail(e.target.value)}
-        type="text"
+        type="email"
         id="new-chat-email"
         autoFocus
+        autoComplete="off"
       />
-      <input type="submit" value="add" />
+      <button className="new-chat__btn">Add</ button>
+
+      </div>
     </form>
   );
 };

@@ -70,7 +70,7 @@ const ChatInput = () => {
         type="text"
         placeholder="your message"
       />
-      <button className="chat-input__btn" type="submit">
+      <button className="chat-input__btn">
         <i className="fas fa-paper-plane"></i>
       </button>
     </form>
