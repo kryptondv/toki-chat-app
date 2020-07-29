@@ -20,10 +20,10 @@ const Chat = () => {
       setMessageRead(chat.receiverHasRead && lastSender === userEmail);
     }
   }, [chat, userEmail]);
-  
+
   // scroll to latest message
   useEffect(() => {
-    if(chatMain.current) {
+    if (chatMain.current) {
       chatMain.current.scrollTo(0, chatMain.current.scrollHeight);
     }
   }, [chat]);
@@ -40,16 +40,7 @@ const Chat = () => {
               <ChatMessage key={index} message={message} />
             ))}
             {messageRead && (
-              <span
-                style={{
-                  fontSize: '0.6rem',
-                  color: 'grey',
-                  display: 'block',
-                  textAlign: 'right',
-                }}
-              >
-                Message read
-              </span>
+              <span className="chat__message-read">Message read</span>
             )}
           </div>
           <ChatInput />
