@@ -15,16 +15,16 @@
   
   &__contact {
     font-weight: 700;
-    font-size: 1rem;
-    color: darken($color-grey, 10%);
+    font-size: .9rem;
+    color: darken($color-grey, 5%);
   }
   &__msg-prev {
     width: 100%;
-    color: lighten($color-grey, 20%);
-    font-size: 0.8rem;
+    color: lighten($color-grey, 25%);
+    font-size: 0.7rem;
   }
   
   &--selected {
-    background: $color-background-light;
+    background: #d3dde4;
   }
 }

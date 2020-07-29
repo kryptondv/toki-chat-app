@@ -1,5 +1,5 @@
 .sidebar {
-  background: $color-white;
+  background: $color-background-light;
   position: fixed;
   height: 100%;
   width: 85vw;
@@ -9,18 +9,31 @@
   justify-content: space-between;
   transition: transform .4s ease-out;
   z-index: 3;
-  overflow: hidden;
+  // overflow: hidden;
   box-shadow: 2px 0 2px rgba(0,0,0,0.05);
   
-  
+  &__logo {
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+    // width: 40%;
+    // margin: .5rem auto;
+    padding: 1.5rem 0 0.1rem;
+    // font-weight: 700;
+    // font-size: 2rem;
+    // color: $color-grey;
+    // background: $color-white;
+  }
 
   &__heading {
-    color: $color-white;
-    background: $color-secondary;
+    // color: $color-white;
+    // background: $color-white;
     text-align: center;
-    padding: 1rem 0;
-    font-weight: 400;
-    font-size: 1.4rem;
+    // padding: 1rem 0;
+    padding-bottom: 2rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-bottom: 2px solid $color-white;
   }
 
   &__toggler {
