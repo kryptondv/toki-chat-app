@@ -23,8 +23,9 @@
 
   &__toggler {
     position: absolute;
-    right: .2rem;
-    top: 1.3rem;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   &__buttons {
