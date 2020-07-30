@@ -20,11 +20,16 @@
   }
 
   &__main {
+    display: flex;
+    flex-direction: column;
     height: calc(100% - 2.55rem);
     overflow: auto;
     padding-right: 1rem;
   }
 
+  &__messages {
+    margin-top: auto;
+  }
 
   &__message-read {
     font-size: 0.6rem;

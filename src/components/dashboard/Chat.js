@@ -29,8 +29,7 @@ const Chat = () => {
     }
   }, [chat]);
 
-
-    // send read confirmation
+  // send read confirmation
   const updateMessageRead = () => {
     const selectedChatMessages = chats[selectedChat].messages;
     const lastSender =
@@ -59,12 +58,14 @@ const Chat = () => {
             {chat.users.filter(usr => usr !== userEmail)[0]}
           </h2>
           <div className="chat__main" ref={chatMain}>
-            {chat.messages.map((message, index) => (
-              <ChatMessage key={index} message={message} />
-            ))}
-            {messageRead && (
-              <span className="chat__message-read">Message read</span>
-            )}
+            <div className="chat__messages">
+              {chat.messages.map((message, index) => (
+                <ChatMessage key={index} message={message} />
+              ))}
+              {messageRead && (
+                <span className="chat__message-read">Message read</span>
+              )}
+            </div>
           </div>
           <ChatInput />
         </section>
